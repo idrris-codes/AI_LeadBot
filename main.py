@@ -328,14 +328,14 @@ def contacts(message):
     kb.add(
         InlineKeyboardButton(
             "📸 Instagram",
-            url="https://instagram.com/idris_codes"
+            url="https://instagram.com/idris.codes"
         )
     )
     
     kb.add(
         InlineKeyboardButton(
             "💬 Telegram",
-            url="https://t.me/idris.codes"
+            url="https://t.me/idris_codes"
         )
     )
 
