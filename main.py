@@ -323,14 +323,29 @@ def faq(message):
 
 @bot.message_handler(func=lambda m: m.text == "📩 Контакты")
 def contacts(message):
+    kb = InlineKeyboardMarkup()
+    
+    kb.add(
+        InlineKeyboardButton(
+            "📸 Instagram",
+            url="https://instagram.com/idris_codes"
+        )
+    )
+    
+    kb.add(
+        InlineKeyboardButton(
+            "💬 Telegram",
+            url="https://t.me/idris.codes"
+        )
+    )
+
     text = """
-<b>📩 Контакты</b>
+<b>📩 Связь с Идрисом</b>
 
-Чтобы связаться с Идрисом, оставьте заявку через кнопку ниже.
-
-После заявки Идрис получит все данные в Telegram.
+Можете написать напрямую или оставить заявку через бота.
 """
-    bot.send_message(message.chat.id, text, reply_markup=main_menu(message.chat.id))
+
+    bot.send_message(message.chat.id, text, reply_markup=kb)
 
 
 @bot.message_handler(func=lambda m: m.text == "🚀 Оставить заявку")
